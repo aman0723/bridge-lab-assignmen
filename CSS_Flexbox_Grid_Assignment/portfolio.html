@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Main Section */
+        main {
+            flex: 1;
+            padding: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .about {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .image-section {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Tablet / Mobile */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            main {
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .about {
+                max-width: 100%;
+            }
+
+            .image-section img {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Aman Mudgal</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="about">
+            <h2>About Me</h2>
+
+            <p>
+                Hello! I am a student interested in Web Development
+                and Data Science. I enjoy learning new technologies
+                and creating useful projects using HTML, CSS and
+                JavaScript.
+            </p>
+        </section>
+
+        <section class="image-section">
+            <img src="https://via.placeholder.com/300"
+                 alt="Profile Image">
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Aman Mudgal. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

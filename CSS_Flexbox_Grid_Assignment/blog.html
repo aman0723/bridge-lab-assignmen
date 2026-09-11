@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Main Grid Layout */
+        .blog-container {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-rows: 80px 1fr 70px;
+
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            grid-area: header;
+
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            grid-area: sidebar;
+
+            background-color: white;
+            padding: 25px;
+
+            border-radius: 10px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+        }
+
+        /* Main */
+        main {
+            grid-area: main;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        /* Blog Posts */
+        .post {
+            background-color: white;
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            margin-bottom: 15px;
+        }
+
+        .post p {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+
+            .blog-container {
+                grid-template-columns: 1fr;
+
+                grid-template-rows: 80px auto auto 70px;
+
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blog-container">
+
+        <!-- Header -->
+        <header>
+            <h1>My Blog</h1>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Categories</h2>
+
+            <ul>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Data Science</a></li>
+                <li><a href="#">Programming</a></li>
+                <li><a href="#">Artificial Intelligence</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+
+            <article class="post">
+                <h2>Introduction to CSS Grid</h2>
+
+                <p>
+                    CSS Grid is a powerful layout system that allows
+                    developers to create rows and columns for
+                    responsive web layouts.
+                </p>
+            </article>
+
+            <article class="post">
+                <h2>Learning Flexbox</h2>
+
+                <p>
+                    Flexbox makes it easy to align and distribute
+                    elements within a container. It is useful for
+                    creating responsive web pages.
+                </p>
+            </article>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Contact: example@email.com | &copy; 2026 My Blog</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

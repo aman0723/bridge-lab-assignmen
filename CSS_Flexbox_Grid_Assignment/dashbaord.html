@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CSS Grid</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Main Dashboard Grid */
+        .dashboard {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-rows: 80px 1fr;
+
+            gap: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+
+            grid-column: 1 / -1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #333;
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 10px 20px 30px 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-rows: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        /* Dashboard Boxes */
+        .box {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+        }
+
+        /* One box spans two columns */
+        .box:first-child {
+            grid-column: span 2;
+        }
+
+        /* Hover Effect */
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .box h2 {
+            margin-bottom: 15px;
+        }
+
+        .box p {
+            font-size: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+
+            .dashboard {
+                grid-template-columns: 180px 1fr;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .box:first-child {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .dashboard {
+                display: flex;
+                flex-direction: column;
+            }
+
+            header {
+                height: 70px;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar nav {
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .main-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .box:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header>
+            <h1>My Dashboard</h1>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>Menu</h2>
+
+            <nav>
+                <a href="#">Dashboard</a>
+                <a href="#">Profile</a>
+                <a href="#">Projects</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <div class="box">
+                <h2>Overview</h2>
+                <p>Dashboard Overview</p>
+            </div>
+
+            <div class="box">
+                <h2>Projects</h2>
+                <p>12 Active Projects</p>
+            </div>
+
+            <div class="box">
+                <h2>Tasks</h2>
+                <p>25 Pending Tasks</p>
+            </div>
+
+            <div class="box">
+                <h2>Messages</h2>
+                <p>8 New Messages</p>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

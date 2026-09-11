@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Flip Animation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Card Container */
+        .card-container {
+            width: 300px;
+            height: 400px;
+
+            perspective: 1000px;
+        }
+
+        /* Card */
+        .card {
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            transition: transform 0.8s ease;
+        }
+
+        /* Flip on Hover */
+        .card-container:hover .card {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back */
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+
+            backface-visibility: hidden;
+
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Front Side */
+        .card-front {
+            background-color: white;
+        }
+
+        .card-front img {
+            width: 180px;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            margin-bottom: 20px;
+        }
+
+        .card-front h2 {
+            font-size: 25px;
+        }
+
+        /* Back Side */
+        .card-back {
+            background-color: #222;
+            color: white;
+
+            transform: rotateY(180deg);
+        }
+
+        .card-back h2 {
+            margin-bottom: 20px;
+        }
+
+        .card-back p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <!-- Front -->
+            <div class="card-front">
+
+                <img src="https://picsum.photos/id/64/300/300"
+                     alt="Profile">
+
+                <h2>Web Developer</h2>
+
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+
+                <h2>About Me</h2>
+
+                <p>
+                    I am a web developer interested in
+                    creating modern and responsive websites
+                    using HTML, CSS and JavaScript.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
