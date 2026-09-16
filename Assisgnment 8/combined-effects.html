@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combined CSS Effects</title>
+
+    <style>
+
+        /* ---------------- GENERAL STYLING ---------------- */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+
+            text-align: center;
+        }
+
+
+        h1 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+
+        .description {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+
+        /* ---------------- FLEXBOX ---------------- */
+
+        /* Distribute examples evenly across the page */
+
+        .effects-container {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* ---------------- EFFECT CARD ---------------- */
+
+        .effect-card {
+            background-color: white;
+
+            width: 30%;
+
+            min-width: 220px;
+
+            padding: 30px 20px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+        }
+
+
+        /* Card hover effect */
+
+        .effect-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .effect-card h2 {
+            margin-top: 0;
+
+            color: #333;
+        }
+
+
+        .effect-card p {
+            color: #666;
+
+            line-height: 1.5;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ---------------- BUTTON ---------------- */
+
+        .effect-button {
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background-color: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            /* Smooth transition */
+
+            transition:
+                transform 0.3s ease-in-out,
+                background-color 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+        }
+
+
+        /* ---------------- HOVER ---------------- */
+
+        /* Button grows and changes color */
+
+        .effect-button:hover {
+
+            transform: scale(1.1);
+
+            background-color: #16a34a;
+
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* ---------------- ACTIVE ---------------- */
+
+        /* Button becomes slightly smaller while clicking */
+
+        .effect-button:active {
+
+            transform: scale(0.95);
+
+            background-color: #dc2626;
+        }
+
+
+        /* ---------------- FOCUS ---------------- */
+
+        /* Shows a clear focus outline */
+
+        .effect-button:focus {
+
+            outline: 3px solid #f59e0b;
+
+            outline-offset: 4px;
+        }
+
+
+        /* ---------------- SECOND BUTTON ---------------- */
+
+        .button-two {
+
+            background-color: #7c3aed;
+        }
+
+
+        .button-two:hover {
+
+            background-color: #db2777;
+
+            transform: scale(1.1) rotate(2deg);
+        }
+
+
+        /* ---------------- THIRD BUTTON ---------------- */
+
+        .button-three {
+
+            background-color: #0891b2;
+        }
+
+
+        .button-three:hover {
+
+            background-color: #ea580c;
+
+            transform: scale(1.1) translateY(-5px);
+        }
+
+
+        /* ---------------- RESPONSIVE ---------------- */
+
+        @media (max-width: 700px) {
+
+            .effects-container {
+                flex-direction: column;
+            }
+
+            .effect-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Combined CSS Effects</h1>
+
+        <p class="description">
+            Hover and click the buttons to see combined
+            pseudo-classes, transitions and transformations.
+        </p>
+
+
+        <div class="effects-container">
+
+
+            <!-- Example 1 -->
+
+            <div class="effect-card">
+
+                <h2>Scale Effect</h2>
+
+                <p>
+                    The button grows slightly and changes
+                    its background color when you hover over it.
+                </p>
+
+                <button class="effect-button">
+                    Hover Me
+                </button>
+
+            </div>
+
+
+            <!-- Example 2 -->
+
+            <div class="effect-card">
+
+                <h2>Rotate Effect</h2>
+
+                <p>
+                    This button combines scaling and rotation
+                    with a smooth transition.
+                </p>
+
+                <button class="effect-button button-two">
+                    Hover Me
+                </button>
+
+            </div>
+
+
+            <!-- Example 3 -->
+
+            <div class="effect-card">
+
+                <h2>Move Effect</h2>
+
+                <p>
+                    This button grows and moves upward
+                    when you hover over it.
+                </p>
+
+                <button class="effect-button button-three">
+                    Hover Me
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

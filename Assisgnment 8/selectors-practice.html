@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selectors Practice</title>
+
+    <style>
+
+        /* ---------------- GENERAL STYLING ---------------- */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ---------------- ELEMENT SELECTOR ---------------- */
+
+        /* Element selector selects all elements of the same type */
+
+        p {
+            line-height: 1.6;
+        }
+
+
+        /* ---------------- CLASS SELECTOR ---------------- */
+
+        /* Class selector selects elements having a particular class */
+
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+
+        /* ---------------- ID SELECTOR ---------------- */
+
+        /* ID selector selects one specific element */
+
+        #special-text {
+            color: blue;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* ---------------- ATTRIBUTE SELECTOR ---------------- */
+
+        /* Selects links having a target attribute */
+
+        a[target="_blank"] {
+            color: green;
+            font-weight: bold;
+        }
+
+
+        /* ---------------- DESCENDANT COMBINATOR ---------------- */
+
+        /* Selects all li elements inside .descendant-list */
+
+        .descendant-list li {
+            color: purple;
+            margin: 8px;
+        }
+
+
+        /* ---------------- CHILD COMBINATOR (>) ---------------- */
+
+        /* Selects only direct children of the parent */
+
+        .child-list > li {
+            background-color: #ffe5e5;
+            padding: 8px;
+            margin: 5px;
+        }
+
+
+        /* ---------------- ADJACENT SIBLING (+) ---------------- */
+
+        /* Selects the paragraph immediately after h3 */
+
+        h3 + p {
+            background-color: #e5f2ff;
+            padding: 10px;
+        }
+
+
+        /* ---------------- GENERAL SIBLING (~) ---------------- */
+
+        /* Selects all paragraphs that come after h3 */
+
+        h3 ~ p {
+            border-left: 4px solid orange;
+            padding-left: 10px;
+        }
+
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Semantic Header -->
+
+    <header>
+        <h1>CSS Selectors Practice Page</h1>
+        <p>Understanding different types of CSS selectors</p>
+    </header>
+
+
+    <main>
+
+        <!-- Element Selector -->
+
+        <section>
+
+            <h2>1. Element Selector</h2>
+
+            <p>
+                This paragraph is styled using the
+                <strong>element selector</strong>.
+            </p>
+
+            <p>
+                Element selectors target HTML elements directly.
+            </p>
+
+        </section>
+
+
+        <!-- Class Selector -->
+
+        <section>
+
+            <h2>2. Class Selector</h2>
+
+            <p>
+                This is a
+                <span class="highlight">
+                    highlighted text
+                </span>
+                using a class selector.
+            </p>
+
+            <p class="highlight">
+                This entire paragraph also uses the same class.
+            </p>
+
+        </section>
+
+
+        <!-- ID Selector -->
+
+        <section>
+
+            <h2>3. ID Selector</h2>
+
+            <p id="special-text">
+                This paragraph is styled using an ID selector.
+            </p>
+
+        </section>
+
+
+        <!-- Attribute Selector -->
+
+        <section>
+
+            <h2>4. Attribute Selector</h2>
+
+            <p>
+                These links demonstrate attribute selectors:
+            </p>
+
+            <a href="https://www.google.com" target="_blank">
+                Google
+            </a>
+
+            <br><br>
+
+            <a href="https://www.github.com" target="_blank">
+                GitHub
+            </a>
+
+        </section>
+
+
+        <!-- Descendant Selector -->
+
+        <section>
+
+            <h2>5. Descendant Combinator</h2>
+
+            <p>
+                The selector targets elements anywhere inside
+                another element.
+            </p>
+
+            <ul class="descendant-list">
+
+                <li>HTML</li>
+                <li>CSS</li>
+
+                <li>
+                    Web Development
+
+                    <ul>
+                        <li>Frontend</li>
+                        <li>Backend</li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Child Selector -->
+
+        <section>
+
+            <h2>6. Child Combinator ( &gt; )</h2>
+
+            <p>
+                The &gt; selector selects only direct children.
+            </p>
+
+            <ul class="child-list">
+
+                <li>Direct Child 1</li>
+                <li>Direct Child 2</li>
+
+                <ul>
+                    <li>Nested Item</li>
+                </ul>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Adjacent Sibling -->
+
+        <section>
+
+            <h2>7. Adjacent Sibling ( + )</h2>
+
+            <h3>Heading</h3>
+
+            <p>
+                This paragraph is immediately after the heading.
+            </p>
+
+            <p>
+                This is another paragraph.
+            </p>
+
+        </section>
+
+
+        <!-- General Sibling -->
+
+        <section>
+
+            <h2>8. General Sibling ( ~ )</h2>
+
+            <h3>Heading</h3>
+
+            <p>
+                First paragraph after heading.
+            </p>
+
+            <p>
+                Second paragraph after heading.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Semantic Footer -->
+
+    <footer>
+
+        <p>
+            CSS Selectors Practice Page
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
