@@ -1,0 +1,48 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+/* Blog cards */
+
+.card {
+    border: none;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Pagination */
+
+.pagination {
+    margin-bottom: 0;
+}
+
+
+/* Pager buttons */
+
+.btn-outline-secondary {
+    transition: 0.3s;
+}
+
+.btn-outline-secondary:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Mobile layout */
+
+@media (max-width: 576px) {
+
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}

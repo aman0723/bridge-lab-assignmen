@@ -1,0 +1,51 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+/* Blog card images */
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* Blog cards */
+
+.card {
+    border: none;
+    transition: 0.3s;
+}
+
+
+/* Hover effect */
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Read More buttons */
+
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Mobile adjustment */
+
+@media (max-width: 576px) {
+
+    .card-img-top {
+        height: 200px;
+    }
+
+}

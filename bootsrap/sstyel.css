@@ -1,0 +1,41 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Sidebar */
+
+.list-group-item {
+    padding: 12px 15px;
+}
+
+
+/* Dashboard cards */
+
+.card {
+    border: none;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+
+/* Table */
+
+.table {
+    vertical-align: middle;
+}
+
+
+/* Mobile adjustment */
+
+@media (max-width: 767px) {
+
+    aside {
+        margin-bottom: 10px;
+    }
+
+}

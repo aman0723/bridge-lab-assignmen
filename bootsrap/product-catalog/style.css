@@ -1,0 +1,29 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Product images */
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Card transition */
+.card {
+    transition: 0.3s;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Button transition */
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}

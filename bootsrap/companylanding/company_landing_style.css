@@ -1,0 +1,46 @@
+/* General page styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero section */
+.hero-section {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+/* Hero heading */
+.hero-section h1 {
+    color: #212529;
+}
+
+/* Hero paragraph */
+.hero-section p {
+    color: #555;
+}
+
+/* Button hover effect */
+.btn-primary {
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustment */
+@media (max-width: 576px) {
+
+    .hero-section {
+        min-height: 450px;
+        padding: 40px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+
+}

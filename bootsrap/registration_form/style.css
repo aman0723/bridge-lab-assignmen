@@ -1,0 +1,43 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Registration card */
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+
+/* Input focus effect */
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* Register button */
+
+.btn-primary {
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Mobile spacing */
+
+@media (max-width: 576px) {
+
+    main {
+        padding-top: 30px !important;
+    }
+
+}
