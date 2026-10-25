@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <style>
+        input { display: block; margin: 8px 0; padding: 8px; }
+        .valid { border: 2px solid green; }
+        .invalid { border: 2px solid red; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Student Registration</h2>
+
+    <form id="studentForm">
+        <input id="name" placeholder="Name">
+        <input id="email" placeholder="Email">
+        <input id="phone" placeholder="Phone">
+        <input id="password" type="password" placeholder="Password">
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById("studentForm");
+
+        const rules = {
+            name: /^[A-Za-z]+(?:\s+[A-Za-z]+)*$/,
+            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            phone: /^\d{10}$/,
+            password: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/
+        };
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let allValid = true;
+
+            for (const field in rules) {
+                const input = document.getElementById(field);
+                const valid = rules[field].test(input.value.trim());
+
+                input.className = valid ? "valid" : "invalid";
+
+                if (!valid) allValid = false;
+            }
+
+            const message = document.getElementById("message");
+
+            message.textContent = allValid
+                ? "Registration successful!"
+                : "Please enter valid details in all fields.";
+
+            message.style.color = allValid ? "green" : "red";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Custom Form Builder</h2>
+    <form id="dynamicForm"></form>
+    <pre id="result"></pre>
+
+    <script>
+        class FormBuilder {
+            constructor(fields) {
+                this.fields = fields;
+            }
+
+            createForm() {
+                const form = document.getElementById("dynamicForm");
+
+                this.fields.forEach(field => {
+                    const label = document.createElement("label");
+                    label.textContent = field.label;
+
+                    const input = document.createElement("input");
+                    input.type = field.type;
+                    input.name = field.name;
+                    input.required = true;
+
+                    form.appendChild(label);
+                    form.appendChild(input);
+                    form.appendChild(document.createElement("br"));
+                });
+
+                const button = document.createElement("button");
+                button.textContent = "Submit";
+                button.type = "submit";
+                form.appendChild(button);
+
+                form.addEventListener("submit", event => {
+                    event.preventDefault();
+                    document.getElementById("result").textContent =
+                        JSON.stringify(this.getFormData(), null, 2);
+                });
+            }
+
+            getFormData() {
+                const form = document.getElementById("dynamicForm");
+                const data = {};
+
+                this.fields.forEach(field => {
+                    data[field.name] = form.elements[field.name].value;
+                });
+
+                return data;
+            }
+        }
+
+        const fields = [
+            { type: "text", label: "Username", name: "username" },
+            { type: "email", label: "Email", name: "email" },
+            { type: "password", label: "Password", name: "password" }
+        ];
+
+        const builder = new FormBuilder(fields);
+        builder.createForm();
+    </script>
+</body>
+</html>
