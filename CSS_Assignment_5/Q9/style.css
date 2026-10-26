@@ -1,0 +1,95 @@
+/* =========================================================
+   Q9: Magazine Column Layout Stylesheet
+   Demonstrates: 3 vertical text columns using column-count and column-gap,
+   column-span: all for headline, justified text, float: left image,
+   page background color and padding around content.
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f0eb;   /* Warm newspaper/parchment background */
+    color: #2b2b2b;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    padding: 50px 20px;
+    line-height: 1.7;
+}
+
+.magazine-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 45px 50px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0dacf;
+}
+
+.magazine-header {
+    text-align: center;
+    border-bottom: 3px double #333333;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.issue-tag {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #7a6e5d;
+    margin-bottom: 10px;
+}
+
+/* 3 Vertical Text Columns */
+.columns-container {
+    column-count: 3;             /* Required column-count: 3 */
+    column-gap: 35px;            /* Required column-gap */
+    column-rule: 1px solid #e0dacf; /* Clean column divider line */
+}
+
+/* Heading spanning across all columns */
+.main-headline {
+    column-span: all;            /* Required column-span: all */
+    font-size: 40px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.columns-container p {
+    text-align: justify;         /* Required justified text */
+    font-size: 16px;
+    margin-bottom: 18px;
+    text-indent: 18px;
+}
+
+/* Image aligned to the left using float */
+.float-img {
+    float: left;                 /* Required float: left */
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    margin: 0 16px 14px 0;
+    border: 1px solid #ccc;
+    padding: 3px;
+    background: #fff;
+}
+
+/* Responsive adjustment when resized */
+@media (max-width: 850px) {
+    .columns-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .columns-container {
+        column-count: 1;
+    }
+}

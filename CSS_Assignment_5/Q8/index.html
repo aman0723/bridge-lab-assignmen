@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8 - CSS Dashboard Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fixed Header across top -->
+    <header class="dash-header">
+        <div class="brand">AdminAnalytics Pro</div>
+        <div class="user-profile">Aman Mudgal (Admin)</div>
+    </header>
+
+    <div class="dash-body">
+        <!-- Sidebar adjusting to full screen height -->
+        <aside class="dash-sidebar">
+            <nav class="side-nav">
+                <a href="#" class="active">Overview</a>
+                <a href="#">Performance Metrics</a>
+                <a href="#">Server Clusters</a>
+                <a href="#">Security Audits</a>
+                <a href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area with evenly spaced shadow boxes -->
+        <main class="dash-content">
+            <div class="content-box">
+                <h2>System Throughput Overview</h2>
+                <p>Real-time telemetry reports 99.98% operational uptime across primary compute instances with 142ms average API latency.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>Active Resource Distribution</h2>
+                <p>Database queries executed today: 2.4 Million. Memory utilization index: 48.6%. Network ingress bandwidth: 850 Mbps.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>Recent Deployment Actions</h2>
+                <p>Build #1042 successfully rolled out across production nodes. Automated integrity verification validated 0 regressions.</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
