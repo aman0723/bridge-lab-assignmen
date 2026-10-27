@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Styled Button Collection</title>
+
+    <style>
+
+        /* ---------------- GENERAL STYLING ---------------- */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+
+        /* ---------------- BUTTON CONTAINER ---------------- */
+
+        /* Flexbox is used to align buttons */
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+
+        /* ---------------- COMMON BUTTON STYLE ---------------- */
+
+        button {
+            padding: 12px 25px;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* ---------------- PRIMARY BUTTON ---------------- */
+
+        .primary {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .primary:hover {
+            background-color: #0056b3;
+        }
+
+        .primary:active {
+            transform: scale(0.95);
+        }
+
+
+        /* ---------------- SECONDARY BUTTON ---------------- */
+
+        .secondary {
+            background-color: #6c757d;
+            color: white;
+            border: 2px solid #6c757d;
+        }
+
+        .secondary:hover {
+            background-color: #545b62;
+        }
+
+        .secondary:active {
+            transform: scale(0.95);
+        }
+
+
+        /* ---------------- OUTLINE BUTTON ---------------- */
+
+        .outline {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .outline:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .outline:active {
+            transform: scale(0.95);
+        }
+
+
+        /* ---------------- FOCUS EFFECT ---------------- */
+
+        /* :focus works when the button receives keyboard/mouse focus */
+
+        button:focus {
+            outline: 3px solid #ffcc00;
+            outline-offset: 3px;
+        }
+
+
+        /* ---------------- DISABLED BUTTON ---------------- */
+
+        button:disabled {
+            background-color: #ccc;
+            color: #777;
+
+            border-color: #ccc;
+
+            cursor: not-allowed;
+
+            box-shadow: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Styled Button Collection</h1>
+
+        <p class="description">
+            Different button styles using CSS
+        </p>
+
+
+        <div class="button-container">
+
+            <!-- Primary Button -->
+
+            <button class="primary">
+                Primary
+            </button>
+
+
+            <!-- Secondary Button -->
+
+            <button class="secondary">
+                Secondary
+            </button>
+
+
+            <!-- Outline Button -->
+
+            <button class="outline">
+                Outline
+            </button>
+
+
+            <!-- Disabled Button -->
+
+            <button class="primary" disabled>
+                Disabled
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

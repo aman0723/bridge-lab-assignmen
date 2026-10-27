@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Box Sizing Comparison</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f6f8;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+
+        /* Main container */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            text-align: center;
+
+        }
+
+
+        h1 {
+            color: #222;
+
+            margin-bottom: 10px;
+        }
+
+
+        .description {
+
+            color: #666;
+
+            max-width: 700px;
+
+            margin: 0 auto 40px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* Boxes container */
+
+        .boxes {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        /* Common box styling */
+
+        .box {
+
+            width: 300px;
+
+            padding: 30px;
+
+            border: 10px solid;
+
+            min-height: 250px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        /* Default box-sizing */
+
+        .content-box {
+
+            box-sizing: content-box;
+
+            background-color: #dbeafe;
+
+            border-color: #2563eb;
+
+        }
+
+
+        /* Border-box */
+
+        .border-box {
+
+            box-sizing: border-box;
+
+            background-color: #dcfce7;
+
+            border-color: #16a34a;
+
+        }
+
+
+        .box h2 {
+
+            margin-top: 0;
+
+        }
+
+
+        .box p {
+
+            line-height: 1.5;
+
+        }
+
+
+        .size-info {
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+        }
+
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+
+            .boxes {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+            .box {
+
+                width: 100%;
+
+                max-width: 350px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+        <h1>CSS Box-Sizing Comparison</h1>
+
+
+        <p class="description">
+
+            Both boxes have the same width of 300px,
+            padding of 30px, and border of 10px.
+            The difference is how CSS calculates their total size.
+
+        </p>
+
+
+        <div class="boxes">
+
+
+            <!-- Content Box -->
+
+            <div class="box content-box">
+
+                <h2>content-box</h2>
+
+                <p>
+
+                    This is the default box-sizing value.
+                    The width applies only to the content.
+
+                </p>
+
+                <p class="size-info">
+
+                    Total Width = 380px
+
+                </p>
+
+            </div>
+
+
+            <!-- Border Box -->
+
+            <div class="box border-box">
+
+                <h2>border-box</h2>
+
+                <p>
+
+                    The width includes the content,
+                    padding, and border.
+
+                </p>
+
+                <p class="size-info">
+
+                    Total Width = 300px
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

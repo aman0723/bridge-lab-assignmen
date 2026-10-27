@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tooltip Demonstration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+
+            /* Center everything using Flexbox */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page {
+            text-align: center;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .tooltip-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        /* Element that will show tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #222;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Tooltip text */
+        .tooltip-text {
+            position: absolute;
+
+            /* Position above the element */
+            bottom: 130%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background-color: #333;
+            color: white;
+
+            padding: 8px 12px;
+            border-radius: 5px;
+
+            white-space: nowrap;
+
+            /* Initially hidden */
+            opacity: 0;
+
+            /* Smooth fade */
+            transition: opacity 0.3s ease-in-out;
+
+            pointer-events: none;
+        }
+
+        /* Small arrow */
+        .tooltip-text::after {
+            content: "";
+
+            position: absolute;
+
+            top: 100%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-width: 6px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        /* Show tooltip on hover */
+        .tooltip:hover .tooltip-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>CSS Tooltip Demonstration</h1>
+
+        <p class="description">
+            Hover over each element to see the tooltip.
+        </p>
+
+        <div class="tooltip-container">
+
+            <!-- Tooltip 1 -->
+            <div class="tooltip">
+
+                Home
+
+                <span class="tooltip-text">
+                    Go to Home Page
+                </span>
+
+            </div>
+
+
+            <!-- Tooltip 2 -->
+            <div class="tooltip">
+
+                Profile
+
+                <span class="tooltip-text">
+                    View Your Profile
+                </span>
+
+            </div>
+
+
+            <!-- Tooltip 3 -->
+            <div class="tooltip">
+
+                Settings
+
+                <span class="tooltip-text">
+                    Open Settings
+                </span>
+
+            </div>
+
+
+            <!-- Tooltip 4 -->
+            <div class="tooltip">
+
+                Help
+
+                <span class="tooltip-text">
+                    Get Help
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
