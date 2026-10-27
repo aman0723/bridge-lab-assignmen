@@ -13,6 +13,7 @@ To maintain a clean and standard modular structure, the repository is organized 
 |:---|:---|:---|
 | 🌿 **`html`** | All HTML Training Assignments (Assignments 1, 2, 3, 4) | [View `html` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html) |
 | 🌿 **`css`** | All CSS Training Assignments (Assignments 5, 6, 7, 8, 9) | [View `css` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css) |
+| 🌿 **`javascript`** | All JavaScript Training Assignments (JavaScript Basics) | [View `javascript` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript) |
 | 🌿 **`main`** | Unified Portfolio / Master Directory | [View `main` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main) |
 
 ---
@@ -42,7 +43,15 @@ To maintain a clean and standard modular structure, the repository is organized 
 
 ---
 
+### ⚡ JavaScript Assignments (`javascript` Branch)
+
+| # | GCR Submission Name | Repo Directory | Key Topics & Deliverables | GCR Submission Link |
+|:---:|:---|:---|:---|:---|
+| **10** | **JavaScript Basics** *(Submission of JavaScript)* | [`JavaScript_Basics/`](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JavaScript_Basics) | Questions 1–10: Personalized Login Greeting, Multi-Type Data Summary with console.table(), Monthly Expense Tracker, Academic Performance Evaluator, Weather Activity Planner, Progressive Discount System, Smart Guessing Game, Employee Salary Projection, Random Math Quiz Generator, and Citizen Eligibility Validator. | [Open JavaScript Basics](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JavaScript_Basics) |
+
+---
+
 ## 💻 Tech Stack
-- **Languages:** HTML5, CSS3, JavaScript
+- **Languages:** HTML5, CSS3, JavaScript (ES6+)
 - **Tools:** Git, GitHub, VS Code
 - **Training:** BridgeLabz Solutions
