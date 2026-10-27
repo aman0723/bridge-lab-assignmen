@@ -1,15 +1,44 @@
-# Bridge Lab Training Assignments
+# BridgeLabz Web Development Training Assignments
 
 **Student:** Aman Mudgal  
-**Repository:** [bridge-lab-assignmen](https://github.com/aman0723/bridge-lab-assignmen)  
-**Active Branch:** `html`  
+**Repository:** [aman0723/bridge-lab-assignmen](https://github.com/aman0723/bridge-lab-assignmen)  
 
 ---
 
-## 📑 HTML Assignments Directory (Google Classroom)
+## 📌 Repository Organization & Branch Structure
 
-| # | Assignment Name & GCR Submission | Folder / Path in Repo | Description & Deliverables | Direct Folder Link |
-| :---: | :--- | :--- | :--- | :--- |
-| **1** | **Submission of Intro to Web Dev** *(Assignment 1)* | [`Introduction_to_Web_Development_Assignment_1/`](./Introduction_to_Web_Development_Assignment_1/) | Client-Server Model, Frontend/Backend/FullStack, Browser Request Lifecycle, VS Code Configuration, Static vs Dynamic, Rendering Engines, Architecture Diagrams. Includes `.docx`, `README.md`, and `index.html`. | [Open Assignment 1](./Introduction_to_Web_Development_Assignment_1/) |
-| **2** | **HTML Basics** *(Assignment 2)* | [`HTML_Basics_Assignment_2/`](./HTML_Basics_Assignment_2/) | Tasks 1 to 20: Webpage basics, hyperlinks (`<a>`), images (`<img>`), formatting (`<strong>`, `<em>`, `<mark>`, `<small>`, `<br>`), inline code (`<code>`), `<span>`, and semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`). | [Open Assignment 2](./HTML_Basics_Assignment_2/) |
-| **3** | **HTML Block and Inline Elements** *(Assignment 3)* | [`HTML_Block_and_Inline_Elements_Assignment_3/`](./HTML_Block_and_Inline_Elements_Assignment_3/) | Questions 1 to 15: Multi-Section Resume, Product Catalog Table, Course Registration Form, Company Layout, University Hierarchy List, Restaurant Menu, Conference Schedule, Student Report Card, Travel Destination, Dropdowns, News, Quotes, Blog, Movie DB, and Portfolio. | [Open Assignment 3](./HTML_Block_and_Inline_Elements_Assignment_3/) |
+To maintain a clean and standard modular structure, the repository is organized across dedicated technology branches:
+
+| Branch | Dedicated Scope | Direct Branch Link |
+|:---|:---|:---|
+| 🌿 **`html`** | All HTML Training Assignments (Assignments 1, 2, 3, 4) | [View `html` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html) |
+| 🌿 **`css`** | All CSS Training Assignments (CSS Basics Assignment 5) | [View `css` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css) |
+| 🌿 **`main`** | Unified Portfolio / Master Directory | [View `main` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main) |
+
+---
+
+## 📑 Complete Assignments Directory (Google Classroom Submissions)
+
+### 🌐 HTML Assignments (`html` Branch)
+
+| # | GCR Submission Name | Repo Directory | Key Topics & Deliverables | GCR Submission Link |
+|:---:|:---|:---|:---|:---|
+| **1** | **Submission of Intro to Web Dev** *(Assignment 1)* | [`Introduction_to_Web_Development_Assignment_1/`](https://github.com/aman0723/bridge-lab-assignmen/tree/html/Introduction_to_Web_Development_Assignment_1) | Client-Server Model, Frontend vs Backend vs FullStack, Browser Request Lifecycle, VS Code Configuration, Static vs Dynamic, Rendering Engines, Architecture Diagrams (`.docx`, `README.md`, `index.html`). | [Open Assignment 1](https://github.com/aman0723/bridge-lab-assignmen/tree/html/Introduction_to_Web_Development_Assignment_1) |
+| **2** | **HTML Basics** *(Assignment 2)* | [`HTML_Basics_Assignment_2/`](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_Basics_Assignment_2) | Tasks 1–20: Document structure, hyperlinks, images, text formatting, code snippets, spans, semantic layout tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`). | [Open Assignment 2](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_Basics_Assignment_2) |
+| **3** | **HTML Block and Inline Elements** *(Assignment 3)* | [`HTML_Block_and_Inline_Elements_Assignment_3/`](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_Block_and_Inline_Elements_Assignment_3) | Questions 1–15: Multi-Section Resume, Product Table, Registration, Company Layout, University Hierarchy, Restaurant Menu, Conference Schedule, Student Report Card, Travel Destination, Dropdowns, News, Quotes, Blog, Movie DB, and Portfolio. | [Open Assignment 3](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_Block_and_Inline_Elements_Assignment_3) |
+| **4** | **HTML iFrames & Forms** *(Assignment 4)* | [`HTML_iFrame_Assignment/`](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_iFrame_Assignment) | 20 Practical Tasks: Responsive YouTube video embed, Google Maps with lazy loading, dual iframes, framesets, head metadata, UTF-8 internationalization, semantic forms (registration, login with CSRF, feedback, upload, contact, payment), entities, security attributes, and head elements. | [Open Assignment 4](https://github.com/aman0723/bridge-lab-assignmen/tree/html/HTML_iFrame_Assignment) |
+
+---
+
+### 🎨 CSS Assignments (`css` Branch)
+
+| # | GCR Submission Name | Repo Directory | Key Topics & Deliverables | GCR Submission Link |
+|:---:|:---|:---|:---|:---|
+| **5** | **CSS Basics** *(Assignment 5)* | [`CSS_Basics_Assignment_5/`](https://github.com/aman0723/bridge-lab-assignmen/tree/css/CSS_Basics_Assignment_5) | Questions 1–10: Personal Portfolio with fixed header, Parallax City Showcase with gradients, 3-Column Team Members, Long Article typography, Responsive Pricing Table, CSS Photo Gallery with hover zoom & caption overlay, Semantic Contact Form, Dashboard Layout, Newspaper Column Structure, and Box Model Mastery. | [Open Assignment 5](https://github.com/aman0723/bridge-lab-assignmen/tree/css/CSS_Basics_Assignment_5) |
+
+---
+
+## 💻 Tech Stack
+- **Languages:** HTML5, CSS3, JavaScript
+- **Tools:** Git, GitHub, VS Code
+- **Training:** BridgeLabz Solutions

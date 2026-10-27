@@ -1,0 +1,102 @@
+/* =========================================================
+   Q6: CSS-Only Photo Gallery Stylesheet
+   Demonstrates: Responsive grid/flexbox multiple columns,
+   hover transform: scale(1.1), caption overlay with position: absolute
+   and opacity transitions, box-shadow and border-radius.
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 50px 20px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #38bdf8;
+}
+
+.gallery-header p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* Responsive CSS Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Gallery Card Container */
+.gallery-card {
+    position: relative;          /* Anchors position: absolute overlay */
+    border-radius: 14px;
+    overflow: hidden;            /* Clips image zoom inside rounded border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    aspect-ratio: 4 / 3;
+    background-color: #1e293b;
+    cursor: pointer;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease; /* Smooth hover transition */
+}
+
+/* When hovered: scale image slightly up */
+.gallery-card:hover img {
+    transform: scale(1.1);       /* Required transform: scale(1.1) */
+}
+
+/* Caption Overlay using position: absolute and opacity */
+.caption-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;                  /* Hidden by default */
+    transition: opacity 0.35s ease; /* Smooth fade-in animation */
+    pointer-events: none;
+}
+
+/* Hover reveals caption overlay */
+.gallery-card:hover .caption-overlay {
+    opacity: 1;                  /* Revealed on hover */
+}
+
+.caption-overlay h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #38bdf8;
+}
+
+.caption-overlay p {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.4;
+}

@@ -1,0 +1,179 @@
+/* =========================================================
+   Q1: Personal Portfolio Stylesheet
+   Demonstrates: position: fixed, CSS units (px, em, %, vh, rem),
+   high contrast color theme, and bottom footer alignment.
+========================================================= */
+
+/* Reset & Global Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0f172a;       /* Dark high-contrast slate background */
+    --bg-surface: #1e293b;       /* Card container surface */
+    --text-primary: #f8fafc;     /* Clean light typography */
+    --text-secondary: #94a3b8;   /* Muted accent typography */
+    --accent-color: #38bdf8;     /* Sky blue interactive element highlight */
+    --accent-hover: #0284c7;     /* Hover state */
+    --header-height: 70px;      /* Fixed header height in px */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;           /* Unit: vh */
+    display: flex;
+    flex-direction: column;      /* Flexbox footer stickiness */
+    line-height: 1.6;
+}
+
+/* 1. Header with position: fixed */
+.navbar {
+    position: fixed;             /* Stays at top during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;                 /* Unit: % */
+    height: var(--header-height);
+    background-color: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;               /* Unit: % */
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-size: 1.5rem;          /* Unit: rem */
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.05em;     /* Unit: em */
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 1.8rem;        /* Unit: rem */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* 2. Main content offset for fixed header */
+.main-content {
+    flex: 1;                     /* Expands to push footer to bottom */
+    margin-top: var(--header-height); /* Offset fixed header */
+    padding: 3rem 5%;            /* Units: rem and % */
+    max-width: 1200px;           /* Unit: px */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 4rem 0;
+}
+
+.bio-card {
+    flex: 1;
+}
+
+.bio-card h1 {
+    font-size: 2.75rem;         /* Unit: rem */
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.bio-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;          /* Unit: px */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: #0f172a;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+}
+
+.secondary-btn {
+    border: 1px solid #475569;
+    color: var(--text-primary);
+}
+
+.secondary-btn:hover {
+    background-color: #1e293b;
+    border-color: var(--accent-color);
+}
+
+.profile-container {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 280px;               /* Unit: px */
+    height: 280px;              /* Unit: px */
+    border-radius: 50%;          /* Unit: % */
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+.about-section {
+    background-color: var(--bg-surface);
+    padding: 2.5rem;             /* Unit: rem */
+    border-radius: 12px;
+    border: 1px solid #334155;
+    margin-top: 2rem;
+}
+
+.about-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* 3. Footer bottom sticky alignment */
+.footer {
+    background-color: #0b1120;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
+}
