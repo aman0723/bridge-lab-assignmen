@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 - Height &amp; Width Practice Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Height &amp; Width Practice Layout</h1>
+        <p>Demonstrating sizing units (px, %, vh, em), min-height, max-width, overflow properties, and Flexbox centering.</p>
+    </header>
+
+    <main class="wrapper">
+        <!-- Box 1: Pixel and Percentage Sizing with max-width -->
+        <section class="box box-one">
+            <h2>Box 1: px &amp; %</h2>
+            <div class="metrics">width: 85% | max-width: 320px | height: 260px</div>
+            <p>Demonstrating fixed pixel height with percentage fluid width capped by <code>max-width: 320px</code>.</p>
+        </section>
+
+        <!-- Box 2: Viewport Height (vh) with min-height & overflow scrolling -->
+        <section class="box box-two">
+            <h2>Box 2: vh &amp; Overflow</h2>
+            <div class="metrics">width: 300px | min-height: 35vh | overflow-y: auto</div>
+            <div class="scroll-content">
+                <p><strong>Scrollable Viewport Area:</strong></p>
+                <p>This box demonstrates <code>min-height: 35vh</code> with <code>overflow-y: auto</code>. When content exceeds the defined dimensions, a clean custom scrollbar activates automatically without distorting surrounding sibling elements.</p>
+                <p>Additional content here tests overflow behavior. As text flows beyond boundaries, clipping is safely contained within this element.</p>
+            </div>
+        </section>
+
+        <!-- Box 3: Em Relative Units with flexible dimensions -->
+        <section class="box box-three">
+            <h2>Box 3: em Relative Units</h2>
+            <div class="metrics">width: 20em | min-height: 16em | padding: 1.5em</div>
+            <p>Using <code>em</code> relative units tied to the current typography scale. Changing the font-size will proportionally scale the box's geometry.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Model Practice - Question 2 &copy; 2026 Aman Mudgal</p>
+    </footer>
+</body>
+</html>

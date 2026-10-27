@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8 - Box Model Exploration Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model Exploration</h1>
+        <p>Interactive visual breakdown of the Margin, Border, Padding, and Content layers, plus content-box vs border-box sizing.</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Visual Layer Representation -->
+        <section class="boxmodel-visual-wrapper">
+            <h2>Visual Representation of Layers</h2>
+            
+            <!-- Margin Layer (Orange) -->
+            <div class="layer-margin">
+                <span class="layer-label label-margin">MARGIN LAYER (Outer Spacing)</span>
+                
+                <!-- Border Layer (Yellow/Gold) -->
+                <div class="layer-border">
+                    <span class="layer-label label-border">BORDER LAYER (Outline &amp; Edge)</span>
+                    
+                    <!-- Padding Layer (Green) -->
+                    <div class="layer-padding">
+                        <span class="layer-label label-padding">PADDING LAYER (Internal Breathing Room)</span>
+                        
+                        <!-- Content Layer (Blue) -->
+                        <div class="layer-content">
+                            <span class="layer-label label-content">CONTENT LAYER</span>
+                            <p>Width: 260px &times; Height: 80px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sizing Comparison: content-box vs border-box -->
+        <section class="comparison-section">
+            <h2>Box-Sizing Comparison Demonstration</h2>
+            <div class="cards-flex">
+                <!-- Card A: content-box (Default) -->
+                <div class="box-card demo-content-box">
+                    <h3>box-sizing: content-box</h3>
+                    <p class="formula">Calculated Width = Width (260px) + Padding (40px) + Border (8px) = <strong>308px</strong></p>
+                    <p class="desc">Default behavior: padding and borders expand the box beyond its declared width.</p>
+                </div>
+
+                <!-- Card B: border-box (Modern Standard) -->
+                <div class="box-card demo-border-box">
+                    <h3>box-sizing: border-box</h3>
+                    <p class="formula">Calculated Width = Fixed at exact declared <strong>260px</strong></p>
+                    <p class="desc">Modern standard: padding and border are absorbed inside the declared width.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Model Practice - Question 8 &copy; 2026 Aman Mudgal</p>
+    </footer>
+</body>
+</html>
