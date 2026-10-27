@@ -1,0 +1,142 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #f8fafc;
+    /* Extra padding so fixed header and footer do not occlude body content */
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+/* Fixed Header */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #38bdf8;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* Main Content Area */
+.content-wrapper {
+    width: 100%;
+}
+
+/* Section Common Styling */
+.gradient-sec {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Section 1: Linear Gradient with background-attachment: fixed (Parallax Effect) */
+.linear-sec {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 50%, #065f46 100%);
+    background-attachment: fixed;
+}
+
+/* Section 2: Radial Gradient */
+.radial-sec {
+    background: radial-gradient(circle at center, #831843 0%, #581c87 40%, #090d16 100%);
+}
+
+/* Glassmorphism Presentation Cards */
+.card-glass {
+    max-width: 650px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.card-glass h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f1f5f9;
+}
+
+.card-glass .tag {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #38bdf8;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+}
+
+.card-glass p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+.card-glass code {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #f8fafc;
+}
+
+/* Fixed Footer */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    z-index: 1000;
+}

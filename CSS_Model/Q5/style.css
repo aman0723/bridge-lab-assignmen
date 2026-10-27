@@ -1,0 +1,224 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #38bdf8;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.container {
+    flex: 1;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.demo-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.demo-card h2 {
+    font-size: 1.3rem;
+    color: #f1f5f9;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+}
+
+/* ========================================================
+   1. ATTRIBUTE SELECTORS
+   ======================================================== */
+
+/* Attribute Selector: targets input elements with type="text" specifically */
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    background: #0f172a;
+    border: 2px solid #38bdf8;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    /* Pseudo-class :focus for interactive glow */
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* Attribute Selector: targets input elements with type="email" */
+input[type="email"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    background: #0f172a;
+    border: 2px solid #a855f7;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+input[type="email"]:focus {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Prefix Attribute Selector [attr^="val"]: targets links starting with "https" */
+a[href^="https"] {
+    display: inline-block;
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 8px 15px 8px 0;
+}
+
+/* Pseudo-element ::before to append a padlock symbol on secure links */
+a[href^="https"]::before {
+    content: "🔒 ";
+}
+
+a:not([href^="https"]) {
+    color: #94a3b8;
+    text-decoration: underline;
+}
+
+/* ========================================================
+   2. COMBINATORS (> , + , ~ , descendant)
+   ======================================================== */
+
+/* Descendant Combinator (space): matches any <p> anywhere inside .parent-box */
+.parent-box p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Child Combinator (>): matches ONLY direct children <p> of .parent-box */
+.parent-box > p {
+    background: #0f172a;
+    border-left: 4px solid #38bdf8;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+}
+
+.nested-wrapper p {
+    background: #0f172a;
+    border-left: 4px solid #f59e0b;
+    padding: 10px 15px;
+    margin-left: 20px;
+}
+
+.trigger-heading {
+    color: #f43f5e;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Adjacent Sibling Combinator (+): matches the immediate next sibling <p> */
+.trigger-heading + p {
+    background: rgba(244, 63, 94, 0.15);
+    border: 1px dashed #f43f5e;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* General Sibling Combinator (~): matches all following sibling paragraphs */
+.trigger-heading ~ p.general-sibling {
+    color: #94a3b8;
+    padding-left: 10px;
+    margin-bottom: 6px;
+}
+
+/* ========================================================
+   3. PSEUDO-CLASSES & PSEUDO-ELEMENTS
+   ======================================================== */
+
+.styled-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.styled-list li {
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+}
+
+/* Structural Pseudo-Class :nth-child(odd) */
+.styled-list li:nth-child(odd) {
+    background-color: #0f172a;
+}
+
+/* Structural Pseudo-Class :nth-child(even) */
+.styled-list li:nth-child(even) {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+/* Dynamic Pseudo-Class :hover */
+.styled-list li:hover {
+    background-color: #334155;
+    transform: translateX(6px);
+}
+
+/* Pseudo-Element ::before for dynamic numbering bullets */
+.styled-list li::before {
+    content: "⚡ ";
+    color: #38bdf8;
+}
+
+/* Pseudo-Element ::after for badge note */
+.styled-list li:last-child::after {
+    content: " [Hover Active]";
+    font-size: 0.75rem;
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    padding: 18px;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #1e293b;
+}

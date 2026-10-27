@@ -1,0 +1,134 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0b0f19;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+/* text-shadow applied to heading for depth */
+.glow-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.6);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Flexbox Single Row Layout */
+.card-row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Base Card Styling */
+.card {
+    background-color: #161f30;
+    border-radius: 16px;
+    padding: 30px 24px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Smooth CSS Transitions for hover lift and shadow expansion */
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+/* text-shadow on Card Titles */
+.card-title {
+    font-size: 1.3rem;
+    color: #f1f5f9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 4px;
+}
+
+.role {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.shadow-info {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    background: #0b0f19;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Shadow Style 1: Subtle Natural Shadow */
+.card-subtle {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.card-subtle:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+}
+
+/* Shadow Style 2: Colored Ambient Glow */
+.card-elevated {
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+.card-elevated:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(56, 189, 248, 0.45);
+}
+
+/* Shadow Style 3: Heavy Deep Multi-Layered Drop Shadow */
+.card-deep {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.card-deep:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #161f30;
+}
