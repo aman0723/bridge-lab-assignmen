@@ -2,11 +2,14 @@
 
 **Student:** Aman Mudgal  
 **Repository:** [bridge-lab-assignmen](https://github.com/aman0723/bridge-lab-assignmen)  
+**Active Branch:** `html`  
 
 ---
 
-## 📑 Submitted Assignments Directory (Google Classroom)
+## 📑 HTML Assignments Directory (Google Classroom)
 
-| Google Classroom Assignment | Folder Name in Repo | Deliverables & Description | Direct Link |
-| :--- | :--- | :--- | :--- |
-| **Submission of Intro to Web Dev** | [`Introduction_to_Web_Development_Assignment_1/`](./Introduction_to_Web_Development_Assignment_1/) | **Assignment 1:** Client-Server Model, Frontend vs Backend vs Full-Stack, Browser Request Lifecycle, VS Code Configuration, Static vs Dynamic, Rendering Engines, Web Architecture Diagrams. Includes `.docx`, `README.md`, and `index.html`. | [View Assignment 1](./Introduction_to_Web_Development_Assignment_1/) |
+| # | Assignment Name & GCR Submission | Folder / Path in Repo | Description & Deliverables | Direct Folder Link |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **Submission of Intro to Web Dev** *(Assignment 1)* | [`Introduction_to_Web_Development_Assignment_1/`](./Introduction_to_Web_Development_Assignment_1/) | Client-Server Model, Frontend/Backend/FullStack, Browser Request Lifecycle, VS Code Configuration, Static vs Dynamic, Rendering Engines, Architecture Diagrams. Includes `.docx`, `README.md`, and `index.html`. | [Open Assignment 1](./Introduction_to_Web_Development_Assignment_1/) |
+| **2** | **HTML Basics** *(Assignment 2)* | [`HTML_Basics_Assignment_2/`](./HTML_Basics_Assignment_2/) | Tasks 1 to 20: Webpage basics, hyperlinks (`<a>`), images (`<img>`), formatting (`<strong>`, `<em>`, `<mark>`, `<small>`, `<br>`), inline code (`<code>`), `<span>`, and semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`). | [Open Assignment 2](./HTML_Basics_Assignment_2/) |
+| **3** | **HTML Block and Inline Elements** *(Assignment 3)* | [`HTML_Block_and_Inline_Elements_Assignment_3/`](./HTML_Block_and_Inline_Elements_Assignment_3/) | Questions 1 to 15: Multi-Section Resume, Product Catalog Table, Course Registration Form, Company Layout, University Hierarchy List, Restaurant Menu, Conference Schedule, Student Report Card, Travel Destination, Dropdowns, News, Quotes, Blog, Movie DB, and Portfolio. | [Open Assignment 3](./HTML_Block_and_Inline_Elements_Assignment_3/) |

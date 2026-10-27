@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3: HTML Block and Inline Elements</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { font-size: 30px; color: #0284c7; margin: 0 0 10px 0; }
+        p.sub { color: #64748b; font-size: 15px; margin: 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+        .card { background-color: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-color: #0284c7; }
+        .q-badge { display: inline-block; background-color: #e0f2fe; color: #0369a1; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; align-self: flex-start; }
+        h3 { font-size: 17px; margin: 0 0 8px 0; color: #0f172a; }
+        p.desc { font-size: 13px; color: #64748b; margin: 0; line-height: 1.5; flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ASSIGNMENT 3: HTML Block and Inline Elements</h1>
+            <p class="sub">Complete 15-Question Practical Implementation by <strong>Aman Mudgal</strong> &bull; BridgeLabz</p>
+        </header>
+
+        <div class="grid">
+            <a class="card" href="Resume.html"><span class="q-badge">Question 1</span><h3>Multi-Section Resume</h3><p class="desc">Semantic resume layout with quick nav links, skills, projects, and education table.</p></a>
+            <a class="card" href="product.html"><span class="q-badge">Question 2</span><h3>Product Catalog</h3><p class="desc">Online store product table with columns, prices, product images, and colspan/rowspan.</p></a>
+            <a class="card" href="Registration.html"><span class="q-badge">Question 3</span><h3>Course Registration Form</h3><p class="desc">Semantic form with fieldset, legend, dropdown select, inputs, and schedule table.</p></a>
+            <a class="card" href="company.html"><span class="q-badge">Question 4</span><h3>Company Layout Page</h3><p class="desc">Layout built purely with block-level elements, aside quote, and contact footer.</p></a>
+            <a class="card" href="university.html"><span class="q-badge">Question 5</span><h3>Nested List Structure</h3><p class="desc">Multi-level academic hierarchy (University &gt; Depts &gt; Courses &gt; Topics) with nested ul/ol.</p></a>
+            <a class="card" href="resturant.html"><span class="q-badge">Question 6</span><h3>Restaurant Menu Page</h3><p class="desc">Menu categorized into Starters, Main Course, and Desserts with itemized tables.</p></a>
+            <a class="card" href="conference.html"><span class="q-badge">Question 7</span><h3>Conference Schedule</h3><p class="desc">Timetable structured using thead, tbody, and tfoot across Morning, Afternoon, Evening sessions.</p></a>
+            <a class="card" href="student.html"><span class="q-badge">Question 8</span><h3>Student Report Card</h3><p class="desc">Report table showcasing marks across 5 subjects with Total and Percentage.</p></a>
+            <a class="card" href="travel.html"><span class="q-badge">Question 9</span><h3>Travel Destination Page</h3><p class="desc">Top 3 travel destinations with image articles, blockquote reviews, and travel tips aside.</p></a>
+            <a class="card" href="dropdown.html"><span class="q-badge">Question 10</span><h3>Dropdown Selection Page</h3><p class="desc">Dropdowns with pre-selected defaults for Country, State, City, and tourist places.</p></a>
+            <a class="card" href="news.html"><span class="q-badge">Question 11</span><h3>News Layout Page</h3><p class="desc">News portal layout with categories, 3 news articles with time tags, and topics aside.</p></a>
+            <a class="card" href="quotation.html"><span class="q-badge">Question 12</span><h3>Quotation Showcase Page</h3><p class="desc">Three inspiring blockquote quotes with cite author tags and introductory context.</p></a>
+            <a class="card" href="blog.html"><span class="q-badge">Question 13</span><h3>Blog Layout Page</h3><p class="desc">HTML5 semantic blog structure with Article 1 (My First Blog) and Article 2.</p></a>
+            <a class="card" href="movie.html"><span class="q-badge">Question 14</span><h3>Movie Database Page</h3><p class="desc">Structured movie catalog table with genres, years, IMDB ratings, and links.</p></a>
+            <a class="card" href="portfolio.html"><span class="q-badge">Question 15</span><h3>Portfolio Layout Page</h3><p class="desc">Pure HTML portfolio layout with About Me, Skills, Projects, and contact aside.</p></a>
+        </div>
+    </div>
+</body>
+</html>
