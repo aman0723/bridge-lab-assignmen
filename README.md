@@ -13,7 +13,7 @@ To maintain a clean and standard modular structure, the repository is organized 
 |:---|:---|:---|
 | 🌿 **`html`** | All HTML Training Assignments (Assignments 1, 2, 3, 4) | [View `html` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html) |
 | 🌿 **`css`** | All CSS Training Assignments (Assignments 5, 6, 7, 8, 9) | [View `css` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css) |
-| 🌿 **`javascript`** | All JavaScript Training Assignments (JavaScript Basics) | [View `javascript` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript) |
+| 🌿 **`javascript`** | All JavaScript Training Assignments (JS Basics, JS Operator, JS ES Feature) | [View `javascript` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript) |
 | 🌿 **`main`** | Unified Portfolio / Master Directory | [View `main` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main) |
 
 ---
@@ -48,6 +48,8 @@ To maintain a clean and standard modular structure, the repository is organized 
 | # | GCR Submission Name | Repo Directory | Key Topics & Deliverables | GCR Submission Link |
 |:---:|:---|:---|:---|:---|
 | **10** | **JavaScript Basics** *(Submission of JavaScript)* | [`JavaScript_Basics/`](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JavaScript_Basics) | Questions 1–10: Personalized Login Greeting, Multi-Type Data Summary with console.table(), Monthly Expense Tracker, Academic Performance Evaluator, Weather Activity Planner, Progressive Discount System, Smart Guessing Game, Employee Salary Projection, Random Math Quiz Generator, and Citizen Eligibility Validator. | [Open JavaScript Basics](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JavaScript_Basics) |
+| **11** | **JS Operator** *(Submission of JS Operator)* | [`JS_Operator/`](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JS_Operator) | Questions 1–10: Scope Conflict Resolver, String Manipulation Report, Math Utility Dashboard, Array Performance Analyzer, Boolean Logic Access System, Event-Based Counter Simulation, Customer Feedback Processor, Dynamic Discount Evaluator, Odd-Even Number Analyzer, and Departmental Employee Evaluator. | [Open JS Operator](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JS_Operator) |
+| **12** | **JS ES Feature** *(Submission of JS ES Features)* | [`JS_ES_Feature/`](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JS_ES_Feature) | Questions 1–10: Dynamic Data Parser, Employee Bonus Calculator, Transaction Validator, Debugging Mystery, Hoisting Lab Sequence Trap, Pyramid Pattern Generator, Smart Calculator, Strict Mode Verification, JSON Audit, and Nested Hoisting Closures. | [Open JS ES Feature](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript/JS_ES_Feature) |
 
 ---
 
