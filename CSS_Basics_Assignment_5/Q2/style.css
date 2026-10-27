@@ -1,0 +1,146 @@
+/* =========================================================
+   Q2: Multi-Section Informational Webpage Stylesheet
+   Demonstrates: <header>, <nav>, <main>, <footer>,
+   linear-gradient, radial-gradient, background-attachment: fixed (parallax),
+   margin/padding/border spacing, and varied typography weights/sizes.
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2d3748;
+    line-height: 1.7;
+}
+
+/* Semantic Header */
+.city-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #b83280;
+    letter-spacing: 1px;
+}
+
+.city-nav a {
+    text-decoration: none;
+    color: #4a5568;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.city-nav a:hover {
+    color: #b83280;
+}
+
+/* Full Width Sections */
+.section {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* 1. Linear Gradient Section */
+.linear-grad-section {
+    background: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+    color: #ffffff;
+}
+
+.content-box {
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 45px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.lead-text {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+/* 2. First Parallax Section (background-attachment: fixed) */
+.parallax-1 {
+    background-image: url('https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1600');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    max-width: 750px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.parallax-overlay h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #f6ad55;
+}
+
+/* 3. Radial Gradient Section */
+.radial-grad-section {
+    background: radial-gradient(circle at center, #2b6cb0 0%, #1a202c 100%);
+    color: #ffffff;
+}
+
+.radial-grad-section h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #63b3ed;
+}
+
+/* 4. Second Parallax Section (background-attachment: fixed) */
+.parallax-2 {
+    background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Semantic Footer */
+.city-footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    border-top: 1px solid #2d3748;
+}

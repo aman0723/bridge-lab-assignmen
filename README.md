@@ -1,15 +1,20 @@
-# Bridge Lab Training Assignments
+# Bridge Lab Training Assignments - CSS Practice
 
 **Student:** Aman Mudgal  
 **Repository:** [bridge-lab-assignmen](https://github.com/aman0723/bridge-lab-assignmen)  
-**Active Branch:** `html`  
+**Active Branch:** `css`
 
 ---
 
-## 📑 HTML Assignments Directory (Google Classroom)
+## 🎨 CSS Assignments Directory (Google Classroom)
 
 | # | Assignment Name & GCR Submission | Folder / Path in Repo | Description & Deliverables | Direct Folder Link |
 | :---: | :--- | :--- | :--- | :--- |
-| **1** | **Submission of Intro to Web Dev** *(Assignment 1)* | [`Introduction_to_Web_Development_Assignment_1/`](./Introduction_to_Web_Development_Assignment_1/) | Client-Server Model, Frontend/Backend/FullStack, Browser Request Lifecycle, VS Code Configuration, Static vs Dynamic, Rendering Engines, Architecture Diagrams. Includes `.docx`, `README.md`, and `index.html`. | [Open Assignment 1](./Introduction_to_Web_Development_Assignment_1/) |
-| **2** | **HTML Basics** *(Assignment 2)* | [`HTML_Basics_Assignment_2/`](./HTML_Basics_Assignment_2/) | Tasks 1 to 20: Webpage basics, hyperlinks (`<a>`), images (`<img>`), formatting (`<strong>`, `<em>`, `<mark>`, `<small>`, `<br>`), inline code (`<code>`), `<span>`, and semantic tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`). | [Open Assignment 2](./HTML_Basics_Assignment_2/) |
-| **3** | **HTML Block and Inline Elements** *(Assignment 3)* | [`HTML_Block_and_Inline_Elements_Assignment_3/`](./HTML_Block_and_Inline_Elements_Assignment_3/) | Questions 1 to 15: Multi-Section Resume, Product Catalog Table, Course Registration Form, Company Layout, University Hierarchy List, Restaurant Menu, Conference Schedule, Student Report Card, Travel Destination, Dropdowns, News, Quotes, Blog, Movie DB, and Portfolio. | [Open Assignment 3](./HTML_Block_and_Inline_Elements_Assignment_3/) |
+| **5** | **CSS Basics** *(Assignment 5)* | [`CSS_Basics_Assignment_5/`](./CSS_Basics_Assignment_5/) | Questions 1 to 10: Portfolio with fixed header, parallax city showcase, 3-column team cards, magazine column layout, pricing table, CSS photo gallery, centered contact form, dashboard layout, and comprehensive Box Model mastery. Each question includes dedicated semantic HTML and external CSS. | [Open CSS Basics Assignment 5](./CSS_Basics_Assignment_5/) |
+
+---
+
+## 🧭 Branch Quick Links
+- **HTML Assignments Branch:** [`html` branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html)
+- **CSS Assignments Branch:** [`css` branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css)
+- **Main Branch:** [`main` branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main)
