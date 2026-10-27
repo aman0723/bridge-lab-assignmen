@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mini UI Layout</title>
+
+    <style>
+
+        /* ================================
+           GLOBAL STYLING
+           ================================ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f2f5f9;
+
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* ================================
+           HEADER
+           ================================ */
+
+        header {
+            background-color: #1e293b;
+
+            color: white;
+
+            padding: 20px;
+
+            text-align: center;
+
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+
+        /* ================================
+           MAIN
+           ================================ */
+
+        main {
+
+            flex: 1;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* ================================
+           MAIN CARD
+           ================================ */
+
+        .card {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+
+        .card h2 {
+
+            margin: 0;
+
+            text-align: center;
+
+            color: #222;
+        }
+
+
+        .card p {
+
+            margin: 0;
+
+            text-align: center;
+
+            color: #666;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================================
+           IMAGE
+           ================================ */
+
+        .card img {
+
+            width: 120px;
+
+            height: 120px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            margin: auto;
+
+            border: 4px solid #2563eb;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* ================================
+           FORM
+           ================================ */
+
+        form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        label {
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 2px solid #ddd;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        /* ================================
+           FOCUS EFFECT
+           ================================ */
+
+        input:focus,
+        textarea:focus {
+
+            border-color: #2563eb;
+
+            box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+        }
+
+
+        textarea {
+
+            resize: vertical;
+
+            min-height: 80px;
+        }
+
+
+        /* ================================
+           BUTTON CONTAINER
+           ================================ */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 5px;
+        }
+
+
+        /* ================================
+           BUTTONS
+           ================================ */
+
+        button {
+
+            padding: 12px 25px;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* Submit button */
+
+        .submit-btn {
+
+            background-color: #2563eb;
+
+            color: white;
+
+            border: 2px solid #2563eb;
+        }
+
+
+        /* Hover effect */
+
+        .submit-btn:hover {
+
+            background-color: #1d4ed8;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Cancel button */
+
+        .cancel-btn {
+
+            background-color: white;
+
+            color: #dc2626;
+
+            border: 2px solid #dc2626;
+        }
+
+
+        .cancel-btn:hover {
+
+            background-color: #dc2626;
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           FOOTER
+           ================================ */
+
+        footer {
+
+            background-color: #1e293b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+        }
+
+
+        footer p {
+
+            margin: 0;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           RESPONSIVE DESIGN
+           ================================ */
+
+        @media (max-width: 500px) {
+
+            main {
+
+                padding: 25px 15px;
+            }
+
+            .card {
+
+                padding: 20px;
+            }
+
+            .buttons {
+
+                flex-direction: column;
+            }
+
+            button {
+
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+         ================================ -->
+
+    <header>
+
+        <h1>My Mini UI</h1>
+
+    </header>
+
+
+
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
+
+    <main>
+
+        <div class="card">
+
+            <h2>Contact Us</h2>
+
+
+            <p>
+                Fill out the form below to get in touch with us.
+            </p>
+
+
+            <!-- Small Image -->
+
+            <img
+                src="https://picsum.photos/200"
+                alt="Profile Image"
+            >
+
+
+            <!-- Form -->
+
+            <form>
+
+                <!-- Name -->
+
+                <div>
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div>
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div>
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="buttons">
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Submit
+                    </button>
+
+
+                    <button
+                        type="reset"
+                        class="cancel-btn"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================================
+         FOOTER
+         ================================ -->
+
+    <footer>
+
+        <p>
+            © 2026 My Mini UI | CSS Practice
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
