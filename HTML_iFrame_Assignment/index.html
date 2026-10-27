@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML iFrames & Forms Assignment - Navigation Portal</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary-dark);
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .task-num {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: #eff6ff;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .card a.btn {
+            display: inline-block;
+            text-align: center;
+            background: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .card a.btn:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">BridgeLabz Training</span>
+            <h1>HTML iFrames & Semantic Forms Assignment</h1>
+            <p>Direct navigation portal for all 20 practical questions</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 01</span></div>
+                    <h3>YouTube Video Embed</h3>
+                    <p>Embeds a responsive YouTube video using percentage dimensions.</p>
+                </div>
+                <a class="btn" href="youtube_iframe.html" target="_blank">Launch Task 01</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 02</span></div>
+                    <h3>Google Map Embed</h3>
+                    <p>Interactive Google Maps iframe with loading="lazy" attribute.</p>
+                </div>
+                <a class="btn" href="google_iframe.html" target="_blank">Launch Task 02</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 03</span></div>
+                    <h3>Dual Iframe Comparison</h3>
+                    <p>Two stacked iframes displaying personal introduction and hobby pages.</p>
+                </div>
+                <a class="btn" href="two_iframe.html" target="_blank">Launch Task 03</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 04</span></div>
+                    <h3>Classic Frameset Layout</h3>
+                    <p>Traditional 3-frame layout with top navigation and targeted bottom frames.</p>
+                </div>
+                <a class="btn" href="framelayout/frameset.html" target="_blank">Launch Task 04</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 05</span></div>
+                    <h3>Head Setup & UTF-8</h3>
+                    <p>Complete head configuration with viewport and multilingual character verification.</p>
+                </div>
+                <a class="btn" href="utf.html" target="_blank">Launch Task 05</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 06</span></div>
+                    <h3>User Registration Form</h3>
+                    <p>Registration form with Name, Email, Password, and HTML5 required attributes.</p>
+                </div>
+                <a class="btn" href="user.html" target="_blank">Launch Task 06</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 07</span></div>
+                    <h3>Secure Login Form</h3>
+                    <p>Login authentication form with hidden CSRF anti-tamper security token.</p>
+                </div>
+                <a class="btn" href="login.html" target="_blank">Launch Task 07</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 08</span></div>
+                    <h3>Customer Feedback Form</h3>
+                    <p>Feedback form featuring textarea comments and radio button satisfaction ratings.</p>
+                </div>
+                <a class="btn" href="feedback.html" target="_blank">Launch Task 08</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 09</span></div>
+                    <h3>File Upload Form</h3>
+                    <p>File uploader restricted to image formats (.jpg, .png) with MIME accept filtering.</p>
+                </div>
+                <a class="btn" href="upload.html" target="_blank">Launch Task 09</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 10</span></div>
+                    <h3>Contact Us Form</h3>
+                    <p>Contact portal with Name, Email, Subject, Message, and validation placeholders.</p>
+                </div>
+                <a class="btn" href="contact.html" target="_blank">Launch Task 10</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 11</span></div>
+                    <h3>Student Information Form</h3>
+                    <p>Academic profile form with Roll Number and Course selection dropdown.</p>
+                </div>
+                <a class="btn" href="student.html" target="_blank">Launch Task 11</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 12</span></div>
+                    <h3>HTML Entities Reference</h3>
+                    <p>Demonstrating special character entity codes (&lt;, &gt;, &amp;, &quot;, &copy;, &reg;).</p>
+                </div>
+                <a class="btn" href="entites.html" target="_blank">Launch Task 12</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 13</span></div>
+                    <h3>Multilingual Content</h3>
+                    <p>Testing internationalization rendering across English, Hindi, and French text.</p>
+                </div>
+                <a class="btn" href="language.html" target="_blank">Launch Task 13</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 14</span></div>
+                    <h3>External Website Embed</h3>
+                    <p>External site embedding with browser iframe security rationale.</p>
+                </div>
+                <a class="btn" href="external.html" target="_blank">Launch Task 14</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 15</span></div>
+                    <h3>Payment Checkout Form</h3>
+                    <p>Checkout payment form with Card Number, Expiry, CVV, and Pay Now button.</p>
+                </div>
+                <a class="btn" href="payment.html" target="_blank">Launch Task 15</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 16</span></div>
+                    <h3>URI Encoding Tester</h3>
+                    <p>Illustrating URL query encoding with percent-encoded %20 space entities.</p>
+                </div>
+                <a class="btn" href="uri.html" target="_blank">Launch Task 16</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 17</span></div>
+                    <h3>Form Target in Iframe</h3>
+                    <p>Form submission seamlessly redirected into an embedded target iframe without full reload.</p>
+                </div>
+                <a class="btn" href="two.html/form.html" target="_blank">Launch Task 17</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 18</span></div>
+                    <h3>Quotations & Citations</h3>
+                    <p>Blockquote styling for long excerpts and inline quotes with HTML entities.</p>
+                </div>
+                <a class="btn" href="long.html" target="_blank">Launch Task 18</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 19</span></div>
+                    <h3>Form Security Attributes</h3>
+                    <p>Demonstrating autocomplete="off" and input protection against browser caching.</p>
+                </div>
+                <a class="btn" href="security.html" target="_blank">Launch Task 19</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header"><span class="task-num">Task 20</span></div>
+                    <h3>Complete Head Structure</h3>
+                    <p>Mastery of all critical head elements: title, meta, base, link, style, and script.</p>
+                </div>
+                <a class="btn" href="important.html" target="_blank">Launch Task 20</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
