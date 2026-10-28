@@ -1,0 +1,52 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Pricing cards */
+
+.pricing-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+
+/* Card hover effect */
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* Card header */
+
+.card-header {
+    padding: 20px;
+}
+
+
+/* Pricing buttons */
+
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Mobile spacing */
+
+@media (max-width: 576px) {
+
+    header {
+        padding-top: 35px !important;
+        padding-bottom: 30px !important;
+    }
+
+}

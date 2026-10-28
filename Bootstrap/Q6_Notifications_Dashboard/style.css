@@ -1,0 +1,23 @@
+/* Custom styling for Notifications Dashboard */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+.card {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.alert {
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+}
+
+/* Summary Well styling */
+.summary-well {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 8px;
+}
