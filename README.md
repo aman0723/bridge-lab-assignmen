@@ -7,14 +7,14 @@
 
 ## 📌 Repository Organization & Branch Structure
 
-To maintain a clean and standard modular structure, the repository is organized across dedicated technology branches:
+To maintain a clean and standard modular structure, all assignments are strictly isolated in their dedicated technology branches (the `main` branch acts as the master navigation index):
 
 | Branch | Dedicated Scope | Direct Branch Link |
 |:---|:---|:---|
-| 🌿 **`html`** | All HTML Training Assignments (Assignments 1, 2, 3, 4) | [View `html` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html) |
-| 🌿 **`css`** | All CSS Training Assignments (Assignments 5, 6, 7, 8, 9) | [View `css` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css) |
-| 🌿 **`javascript`** | All JavaScript Training Assignments (JS Basics, JS Operator, JS ES Feature) | [View `javascript` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript) |
-| 🌿 **`main`** | Unified Portfolio / Master Directory | [View `main` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main) |
+| 🌿 **`html`** | All HTML Training Assignments (Assignments 1 to 4) | [View `html` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/html) |
+| 🌿 **`css`** | All CSS & Bootstrap Training Assignments (Assignments 5 to 10) | [View `css` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/css) |
+| 🌿 **`javascript`** | All JavaScript Training Assignments (Assignments 11 to 15) | [View `javascript` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/javascript) |
+| 🌿 **`main`** | Master Index & Navigation Hub | [View `main` Branch](https://github.com/aman0723/bridge-lab-assignmen/tree/main) |
 
 ---
 
