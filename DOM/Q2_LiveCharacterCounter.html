@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2: Live Character Counter with Warning Behavior</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 580px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .textarea-wrap {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        textarea {
+            width: 100%;
+            height: 140px;
+            padding: 14px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            line-height: 1.5;
+            outline: none;
+            resize: vertical;
+            transition: all 0.2s ease;
+        }
+        textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        textarea.warning {
+            border-color: #eab308;
+            box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+        }
+        textarea.limit-reached {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .counter-badge {
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #e2e8f0;
+            color: #334155;
+            transition: all 0.25s ease;
+        }
+        .counter-badge.normal {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        /* Yellow at 20 chars left */
+        .counter-badge.yellow {
+            background: #fef08a;
+            color: #854d0e;
+            animation: pulseWarning 1.5s infinite;
+        }
+        /* Red at 0 chars left */
+        .counter-badge.red {
+            background: #fecaca;
+            color: #991b1b;
+            animation: pulseDanger 0.8s infinite;
+        }
+        @keyframes pulseWarning {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        @keyframes pulseDanger {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+        .btn-reset {
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-reset:hover {
+            background: #475569;
+        }
+        .helper-text {
+            font-size: 0.82rem;
+            color: #64748b;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 2 • Event Prevention</span>
+        <h1>Live Character Counter with Warning</h1>
+        <p>Max 100 characters. Turns yellow at 20, red at 0 with <code>preventDefault()</code>.</p>
+    </div>
+
+    <div class="textarea-wrap">
+        <textarea id="messageInput" placeholder="Start typing your message (maximum 100 characters)..."></textarea>
+    </div>
+
+    <div class="status-bar">
+        <div class="counter-badge normal" id="counterBadge">
+            <span id="charCount">100</span> characters left
+        </div>
+        <button class="btn-reset" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="helper-text">
+        💡 <strong>Rules Implemented:</strong>
+        <ul style="margin-left: 20px; margin-top: 4px;">
+            <li>Normal: 100 to 21 chars left (Blue)</li>
+            <li>Warning: 20 to 1 chars left (Yellow warning)</li>
+            <li>Limit Reached: 0 chars left (Red badge, further typing blocked via <code>e.preventDefault()</code>)</li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q2_LiveCharacterCounter.js"></script>
+</body>
+</html>

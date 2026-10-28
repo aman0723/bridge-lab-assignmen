@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5: Image Gallery with Modal Preview (stopPropagation)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #f3e8ff;
+            color: #7e22ce;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        /* Gallery Grid (6 Images) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            aspect-ratio: 4 / 3;
+            background: #e2e8f0;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px 12px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        /* Modal Popup Backdrop */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        /* Modal Content (Uses stopPropagation to prevent outside close) */
+        .modal-content {
+            background: #ffffff;
+            border-radius: 12px;
+            max-width: 640px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: popUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes popUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-img-wrap {
+            width: 100%;
+            max-height: 400px;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-img-wrap img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+        }
+        .modal-footer {
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        .modal-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .modal-close-btn {
+            background: #e2e8f0;
+            color: #475569;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .modal-close-btn:hover {
+            background: #cbd5e1;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 5 • stopPropagation()</span>
+        <h1>Image Gallery with Modal Preview</h1>
+        <p>Click image to preview in modal. Click outside closes modal; clicking inside modal uses <code>event.stopPropagation()</code>.</p>
+    </div>
+
+    <!-- 6 Images Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-title="Majestic Mountain Range" data-src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&auto=format&fit=crop" alt="Majestic Mountain Range">
+            <div class="gallery-caption">1. Mountain Peak</div>
+        </div>
+
+        <div class="gallery-item" data-title="Tropical Ocean Sunset" data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop" alt="Tropical Ocean Sunset">
+            <div class="gallery-caption">2. Ocean Horizon</div>
+        </div>
+
+        <div class="gallery-item" data-title="Misty Pine Forest" data-src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&auto=format&fit=crop" alt="Misty Pine Forest">
+            <div class="gallery-caption">3. Pine Forest</div>
+        </div>
+
+        <div class="gallery-item" data-title="Modern Architectural Marvel" data-src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&auto=format&fit=crop" alt="Modern Architectural Marvel">
+            <div class="gallery-caption">4. Architecture</div>
+        </div>
+
+        <div class="gallery-item" data-title="Golden Desert Dunes" data-src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&auto=format&fit=crop" alt="Golden Desert Dunes">
+            <div class="gallery-caption">5. Desert Dunes</div>
+        </div>
+
+        <div class="gallery-item" data-title="Tranquil Autumn Lake" data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=900&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&auto=format&fit=crop" alt="Tranquil Autumn Lake">
+            <div class="gallery-caption">6. Autumn Lake</div>
+        </div>
+    </div>
+
+    <!-- Modal Popup Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-img-wrap">
+                <img id="modalImg" src="" alt="Enlarged Preview">
+            </div>
+            <div class="modal-footer">
+                <div class="modal-title" id="modalTitle">Image Preview</div>
+                <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q5_ImageGalleryModal.js"></script>
+</body>
+</html>

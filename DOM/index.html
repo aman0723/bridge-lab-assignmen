@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Assignments Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+        .tag-pill {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 22px;
+        }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #60a5fa;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        .card:hover::before {
+            width: 8px;
+        }
+        .card-num {
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+        .card-desc {
+            font-size: 0.86rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #334155;
+            padding-top: 14px;
+            font-size: 0.82rem;
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        .card-footer span {
+            transition: transform 0.2s;
+        }
+        .card:hover .card-footer span {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="tag-pill">BridgeLabz JavaScript Lab</div>
+        <h1>JavaScript DOM Assignment</h1>
+        <p>Interactive DOM event manipulation, delegation, validation, and layout applications.</p>
+    </div>
+
+    <div class="grid">
+        <!-- Q1 -->
+        <a href="Q1_ProductListManager.html" class="card">
+            <div>
+                <div class="card-num">Question 1</div>
+                <div class="card-title">Dynamic Product List Manager</div>
+                <div class="card-desc">Add, inline-edit, and delete products using event delegation on the parent &lt;ul&gt; with outside auto-save.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q2 -->
+        <a href="Q2_LiveCharacterCounter.html" class="card">
+            <div>
+                <div class="card-num">Question 2</div>
+                <div class="card-title">Live Character Counter</div>
+                <div class="card-desc">Textarea counter with warning states (yellow at 20, red at 0) and <code>preventDefault()</code> typing blocker.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q3 -->
+        <a href="Q3_MultiStepForm.html" class="card">
+            <div>
+                <div class="card-num">Question 3</div>
+                <div class="card-title">Multi-Step Form with Validation</div>
+                <div class="card-desc">3-step wizard with strict step validation on "Next", data preservation on "Back", and final summary.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q4 -->
+        <a href="Q4_ThemeSwitcher.html" class="card">
+            <div>
+                <div class="card-num">Question 4</div>
+                <div class="card-title">Theme Switcher via setAttribute()</div>
+                <div class="card-desc">Switch between Light, Dark, and Blue themes using <code>setAttribute()</code> and custom <code>data-theme</code>.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q5 -->
+        <a href="Q5_ImageGalleryModal.html" class="card">
+            <div>
+                <div class="card-num">Question 5</div>
+                <div class="card-title">Image Gallery with Modal Preview</div>
+                <div class="card-desc">6-image grid with popup preview, backdrop click close, and <code>stopPropagation()</code> modal protection.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q6 -->
+        <a href="Q6_RealTimeTableFilter.html" class="card">
+            <div>
+                <div class="card-num">Question 6</div>
+                <div class="card-title">Real-Time Table Filter</div>
+                <div class="card-desc">Instant case-insensitive student records filtering on input event with "No results found" fallback.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q7 -->
+        <a href="Q7_MouseCoordinatesLogger.html" class="card">
+            <div>
+                <div class="card-num">Question 7</div>
+                <div class="card-title">Mouse Coordinates & Red Dot Dropper</div>
+                <div class="card-desc">400×400 canvas tracking clientX & clientY coordinates with double-click red dot placement.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q8 -->
+        <a href="Q8_CustomDropdownCapturing.html" class="card">
+            <div>
+                <div class="card-num">Question 8</div>
+                <div class="card-title">Custom Dropdown (Capturing Phase)</div>
+                <div class="card-desc">Pure JS dropdown (no &lt;select&gt;) using Event Capturing Phase (<code>true</code>) for outside click closing.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+
+        <!-- Q9 -->
+        <a href="Q9_FormSubmitBlocker.html" class="card">
+            <div>
+                <div class="card-num">Question 9</div>
+                <div class="card-title">Form Blocker with Live Errors</div>
+                <div class="card-desc">Prevents form submission via <code>preventDefault()</code> with live auto-clearing error validations.</div>
+            </div>
+            <div class="card-footer">
+                Launch Application <span>→</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

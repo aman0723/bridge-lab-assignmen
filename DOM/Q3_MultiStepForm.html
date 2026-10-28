@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3: Multi-Step Form with Next/Back & Validation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 540px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        /* Step Progress Indicators */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e2e8f0;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .progress-bar-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 3px;
+            background: #3b82f6;
+            transform: translateY(-50%);
+            z-index: 2;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .step-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #64748b;
+            z-index: 3;
+            transition: all 0.3s;
+        }
+        .step-circle.active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+        .step-circle.completed {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+        .step-panel {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .step-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .form-group input.is-invalid {
+            border-color: #ef4444;
+            background: #fff5f5;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 6px;
+            display: none;
+        }
+        .error-message.visible {
+            display: block;
+        }
+        .btn-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 28px;
+        }
+        .btn-action {
+            padding: 11px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+        }
+        .btn-prev {
+            background: #e2e8f0;
+            color: #475569;
+        }
+        .btn-prev:hover {
+            background: #cbd5e1;
+        }
+        .btn-next {
+            background: #3b82f6;
+            color: #ffffff;
+            margin-left: auto;
+        }
+        .btn-next:hover {
+            background: #2563eb;
+        }
+        .btn-submit {
+            background: #10b981;
+            color: #ffffff;
+            margin-left: auto;
+        }
+        .btn-submit:hover {
+            background: #059669;
+        }
+        /* Summary Box */
+        .summary-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        .summary-label {
+            color: #64748b;
+            font-weight: 600;
+        }
+        .summary-value {
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .btn-restart {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 3 • Multi-Step Form</span>
+        <h1>Multi-Step Form with Validation</h1>
+        <p>Step-by-step validation. "Next" validates input, "Back" preserves data.</p>
+    </div>
+
+    <!-- Step Indicators -->
+    <div class="progress-steps">
+        <div class="progress-bar-fill" id="progressBar"></div>
+        <div class="step-circle active" id="circle1">1</div>
+        <div class="step-circle" id="circle2">2</div>
+        <div class="step-circle" id="circle3">3</div>
+    </div>
+
+    <!-- Step 1: Name -->
+    <div class="step-panel active" id="step1">
+        <div class="form-group">
+            <label for="nameInput">Step 1: Full Name *</label>
+            <input type="text" id="nameInput" placeholder="Enter your full name (min 3 chars)...">
+            <div class="error-message" id="nameError">Please enter a valid name (at least 3 characters).</div>
+        </div>
+        <div class="btn-controls">
+            <button type="button" class="btn-action btn-next" id="nextBtn1">Next: Email →</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Email -->
+    <div class="step-panel" id="step2">
+        <div class="form-group">
+            <label for="emailInput">Step 2: Email Address *</label>
+            <input type="email" id="emailInput" placeholder="Enter valid email (e.g. user@example.com)...">
+            <div class="error-message" id="emailError">Please enter a valid email containing '@' and a domain.</div>
+        </div>
+        <div class="btn-controls">
+            <button type="button" class="btn-action btn-prev" id="prevBtn2">← Back</button>
+            <button type="button" class="btn-action btn-next" id="nextBtn2">Next: Password →</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Password -->
+    <div class="step-panel" id="step3">
+        <div class="form-group">
+            <label for="passwordInput">Step 3: Security Password *</label>
+            <input type="password" id="passwordInput" placeholder="Create a secure password (min 6 chars)...">
+            <div class="error-message" id="passwordError">Password must be at least 6 characters long.</div>
+        </div>
+        <div class="btn-controls">
+            <button type="button" class="btn-action btn-prev" id="prevBtn3">← Back</button>
+            <button type="button" class="btn-action btn-submit" id="submitBtn">Complete Registration ✓</button>
+        </div>
+    </div>
+
+    <!-- Step 4: Summary Result View -->
+    <div class="step-panel" id="summaryPanel">
+        <div style="text-align: center; margin-bottom: 16px;">
+            <span style="font-size: 2.2rem;">🎉</span>
+            <h2 style="font-size: 1.3rem; color: #15803d; margin-top: 6px;">Registration Summary</h2>
+            <p style="font-size: 0.85rem; color: #64748b;">All 3 steps successfully validated!</p>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-row">
+                <span class="summary-label">Full Name:</span>
+                <span class="summary-value" id="summaryName"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Email:</span>
+                <span class="summary-value" id="summaryEmail"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Password:</span>
+                <span class="summary-value" id="summaryPassword"></span>
+            </div>
+        </div>
+
+        <button class="btn-restart" id="restartBtn">Submit Another Form</button>
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q3_MultiStepForm.js"></script>
+</body>
+</html>

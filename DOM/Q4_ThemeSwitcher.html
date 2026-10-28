@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4: Theme Switcher Using Attribute Manipulation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* 1. LIGHT THEME (Default) */
+        body.theme-light {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        body.theme-light .card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+        body.theme-light .badge {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        /* 2. DARK THEME */
+        body.theme-dark {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        body.theme-dark .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+        body.theme-dark .badge {
+            background-color: #334155;
+            color: #cbd5e1;
+        }
+        body.theme-dark .header p {
+            color: #94a3b8 !important;
+        }
+
+        /* 3. BLUE THEME */
+        body.theme-blue {
+            background-color: #0f2b46;
+            color: #ffffff;
+        }
+        body.theme-blue .card {
+            background-color: #173d63;
+            border: 1px solid #2563eb;
+            box-shadow: 0 10px 25px -5px rgba(15, 43, 70, 0.6);
+        }
+        body.theme-blue .badge {
+            background-color: #1e40af;
+            color: #bfdbfe;
+        }
+        body.theme-blue .header p {
+            color: #93c5fd !important;
+        }
+
+        /* Layout */
+        body {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .card {
+            padding: 32px;
+            border-radius: 14px;
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+            padding-bottom: 14px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        /* Buttons */
+        .theme-buttons {
+            display: flex;
+            gap: 12px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .btn-theme {
+            flex: 1;
+            min-width: 140px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+        .btn-theme:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btn-theme.active {
+            border-color: #eab308;
+            box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.35);
+        }
+        .btn-light {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+        }
+        .btn-dark {
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid #334155;
+        }
+        .btn-blue {
+            background: #2563eb;
+            color: #ffffff;
+        }
+        /* Live attribute inspector */
+        .attribute-inspector {
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+        body.theme-dark .attribute-inspector {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        body.theme-blue .attribute-inspector {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .inspector-row {
+            margin-bottom: 6px;
+        }
+        .inspector-label {
+            color: #64748b;
+        }
+        .inspector-val {
+            color: #10b981;
+            font-weight: 700;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        body.theme-blue .nav-back {
+            color: #60a5fa;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="theme-light" data-theme="light">
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <span class="badge">Question 4 • Attribute Manipulation</span>
+            <h1>Theme Switcher with setAttribute()</h1>
+            <p>Switches between Light, Dark, and Blue. Adds class & <code>data-theme</code> via <code>setAttribute()</code>.</p>
+        </div>
+
+        <div class="theme-buttons">
+            <button class="btn-theme btn-light active" id="btnLight">
+                ☀️ Light Mode
+            </button>
+            <button class="btn-theme btn-dark" id="btnDark">
+                🌙 Dark Mode
+            </button>
+            <button class="btn-theme btn-blue" id="btnBlue">
+                🌊 Blue Theme
+            </button>
+        </div>
+
+        <!-- Live DOM Attribute Inspector -->
+        <div class="attribute-inspector">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #eab308;">🔍 Live DOM &lt;body&gt; Attribute Monitor:</div>
+            <div class="inspector-row">
+                <span class="inspector-label">&lt;body class="..."&gt;:</span> 
+                <span class="inspector-val" id="monitorClass">theme-light</span>
+            </div>
+            <div class="inspector-row">
+                <span class="inspector-label">&lt;body data-theme="..."&gt;:</span> 
+                <span class="inspector-val" id="monitorDataTheme">light</span>
+            </div>
+            <div class="inspector-row">
+                <span class="inspector-label">Method Used:</span> 
+                <span class="inspector-val">document.body.setAttribute()</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+    </div>
+</div>
+
+<script src="Q4_ThemeSwitcher.js"></script>
+</body>
+</html>

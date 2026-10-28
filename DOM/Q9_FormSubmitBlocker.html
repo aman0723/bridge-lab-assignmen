@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9: Form Submit Blocker with preventDefault() and Live Errors</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 520px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffe4e6;
+            color: #e11d48;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #334155;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .form-group input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .form-group input.is-invalid {
+            border-color: #ef4444;
+            background: #fff5f5;
+        }
+        .inline-error {
+            color: #ef4444;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 6px;
+            display: none;
+        }
+        .inline-error.visible {
+            display: block;
+        }
+        .btn-submit {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .btn-submit:hover {
+            background: #1d4ed8;
+        }
+        /* Success Banner */
+        .success-banner {
+            display: none;
+            background: #dcfce7;
+            border: 2px solid #86efac;
+            color: #15803d;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 700;
+            animation: slideUp 0.3s ease;
+        }
+        .success-banner.visible {
+            display: block;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 9 • preventDefault() & Live Validation</span>
+        <h1>Form Submit Blocker with Live Errors</h1>
+        <p>Uses <code>e.preventDefault()</code> to stop submission on invalid fields. Errors disappear automatically on correction.</p>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="userForm" novalidate>
+        <!-- Name (required) -->
+        <div class="form-group">
+            <label for="userName">Name <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="userName" placeholder="Enter your full name...">
+            <div class="inline-error" id="nameError">Name is required (at least 2 characters).</div>
+        </div>
+
+        <!-- Email (required, must contain @) -->
+        <div class="form-group">
+            <label for="userEmail">Email <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="userEmail" placeholder="e.g. user@gmail.com...">
+            <div class="inline-error" id="emailError">Valid email is required (must contain '@').</div>
+        </div>
+
+        <!-- Password (min 6 chars) -->
+        <div class="form-group">
+            <label for="userPassword">Password <span style="color: #ef4444;">*</span></label>
+            <input type="password" id="userPassword" placeholder="Minimum 6 characters...">
+            <div class="inline-error" id="passwordError">Password must be at least 6 characters long.</div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+    </form>
+
+    <!-- Success Message Banner -->
+    <div class="success-banner" id="successBanner">
+        ✅ Form Submitted Successfully!
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q9_FormSubmitBlocker.js"></script>
+</body>
+</html>

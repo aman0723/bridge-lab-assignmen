@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6: Real-Time Table Filter Using input Event</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffedd5;
+            color: #c2410c;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 18px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.2s;
+        }
+        .search-box input:focus {
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+        }
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        thead th {
+            background: #f8fafc;
+            color: #475569;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 18px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        tbody td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.92rem;
+            color: #1e293b;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+        .cgpa-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            background: #dcfce7;
+            color: #15803d;
+        }
+        .no-results-row td {
+            text-align: center;
+            padding: 30px;
+            color: #ef4444;
+            font-weight: 600;
+            background: #fef2f2;
+        }
+        .counter-info {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 12px;
+            text-align: right;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 6 • input Event Filter</span>
+        <h1>Real-Time Table Filter</h1>
+        <p>Live case-insensitive search by student Name or Branch. Displays "No results found" if empty.</p>
+    </div>
+
+    <!-- Live Search Input -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search student name or branch (e.g. Rahul, CSE, ECE)..." autofocus>
+    </div>
+
+    <!-- Student Records Table -->
+    <div class="table-wrap">
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Branch</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr class="student-row">
+                    <td>Aman Mudgal</td>
+                    <td>Computer Science (CSE)</td>
+                    <td><span class="cgpa-pill">9.4</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Priya Sharma</td>
+                    <td>Electronics & Comm. (ECE)</td>
+                    <td><span class="cgpa-pill">8.9</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Rohit Verma</td>
+                    <td>Information Technology (IT)</td>
+                    <td><span class="cgpa-pill">8.7</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Sneha Gupta</td>
+                    <td>Computer Science (CSE)</td>
+                    <td><span class="cgpa-pill">9.6</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Amit Kumar</td>
+                    <td>Mechanical Engineering (ME)</td>
+                    <td><span class="cgpa-pill">8.2</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Ananya Jain</td>
+                    <td>Data Science & AI</td>
+                    <td><span class="cgpa-pill">9.1</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Vikas Singh</td>
+                    <td>Civil Engineering (CE)</td>
+                    <td><span class="cgpa-pill">7.9</span></td>
+                </tr>
+                <tr class="student-row">
+                    <td>Neha Kapoor</td>
+                    <td>Electrical Engineering (EE)</td>
+                    <td><span class="cgpa-pill">8.5</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="counter-info" id="counterInfo">Showing 8 of 8 students</div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q6_RealTimeTableFilter.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8: Custom Dropdown Using Only JavaScript (Capturing Phase)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 540px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #4338ca;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        /* Custom Dropdown Container */
+        .dropdown-wrapper {
+            position: relative;
+            width: 100%;
+            margin: 24px 0;
+        }
+        .dropdown-btn {
+            width: 100%;
+            padding: 14px 20px;
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .dropdown-btn:hover {
+            border-color: #6366f1;
+        }
+        .dropdown-btn.active {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        .arrow-icon {
+            font-size: 0.8rem;
+            transition: transform 0.25s ease;
+            color: #64748b;
+        }
+        .dropdown-btn.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        /* Dropdown Menu Options List */
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            list-style: none;
+            display: none;
+            z-index: 50;
+            overflow: hidden;
+            animation: slideDown 0.2s ease;
+        }
+        .dropdown-menu.open {
+            display: block;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown-item {
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .dropdown-item:hover {
+            background: #eef2ff;
+            color: #4338ca;
+            font-weight: 600;
+        }
+        .dropdown-item.selected {
+            background: #e0e7ff;
+            color: #4338ca;
+            font-weight: 700;
+        }
+        /* Event Phase Visualizer Logger */
+        .log-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            margin-top: 20px;
+        }
+        .log-title {
+            font-weight: 700;
+            color: #4338ca;
+            margin-bottom: 8px;
+        }
+        .log-entry {
+            margin-bottom: 4px;
+            color: #334155;
+        }
+        .log-entry.capturing {
+            color: #059669;
+            font-weight: 700;
+        }
+        .nav-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="badge">Question 8 • Event Capturing Phase</span>
+        <h1>Custom Dropdown (No &lt;select&gt;)</h1>
+        <p>Pure JS dropdown with option selection. Outside click closes menu using <strong>Event Capturing Phase</strong>.</p>
+    </div>
+
+    <!-- Custom Dropdown Component -->
+    <div class="dropdown-wrapper" id="dropdownWrapper">
+        <button type="button" class="dropdown-btn" id="dropdownBtn">
+            <span id="selectedText">Select a Programming Track...</span>
+            <span class="arrow-icon">▼</span>
+        </button>
+
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li class="dropdown-item" data-value="Full-Stack Web Development">🌐 Full-Stack Web Development</li>
+            <li class="dropdown-item" data-value="Artificial Intelligence & ML">🤖 Artificial Intelligence & ML</li>
+            <li class="dropdown-item" data-value="Cloud DevOps Engineering">☁️ Cloud DevOps Engineering</li>
+            <li class="dropdown-item" data-value="Cybersecurity & Defense">🛡️ Cybersecurity & Defense</li>
+            <li class="dropdown-item" data-value="Mobile App Development">📱 Mobile App Development</li>
+        </ul>
+    </div>
+
+    <!-- Live Event Capturing Phase Log -->
+    <div class="log-box">
+        <div class="log-title">⚡ Event Propagation & Capturing Monitor:</div>
+        <div id="eventLog">
+            <div class="log-entry">Waiting for interaction...</div>
+        </div>
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to All DOM Assignments</a>
+</div>
+
+<script src="Q8_CustomDropdownCapturing.js"></script>
+</body>
+</html>
