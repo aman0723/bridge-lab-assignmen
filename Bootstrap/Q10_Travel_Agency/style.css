@@ -1,0 +1,65 @@
+/* General page styling */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+/* Carousel images */
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+
+/* Carousel caption */
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+/* Progress bar */
+
+.progress {
+    height: 30px;
+}
+
+
+/* Booking button */
+
+.btn-primary {
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Responsive carousel */
+
+@media (max-width: 576px) {
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        padding: 8px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 18px;
+    }
+
+    .carousel-caption p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+}

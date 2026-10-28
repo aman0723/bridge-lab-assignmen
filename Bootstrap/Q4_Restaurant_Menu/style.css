@@ -1,0 +1,34 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf5;
+}
+
+/* Food image */
+.food-image {
+    width: 700px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Menu table */
+.table {
+    background-color: white;
+}
+
+/* Chef's special list */
+.list-group-item {
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+}
+
+/* Responsive image */
+@media (max-width: 576px) {
+    .food-image {
+        max-height: 280px;
+    }
+}
